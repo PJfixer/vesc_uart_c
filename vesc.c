@@ -100,10 +100,10 @@ bool getVescValues(void) {
 	}
 
 
-		bool read = processReadPacket((uint8_t *)vesc_uart2_container.data,&data_vesc1); //returns true if sucessfull
-		vesc_uart2_container.vesc_msg_received = 0; // reset packet state
+	bool read = processReadPacket((uint8_t *)vesc_uart2_container.data,&data_vesc1); //returns true if sucessfull
+	vesc_uart2_container.vesc_msg_received = 0; // reset packet state
 
-		return read;
+	return read;
 
 }
 
@@ -195,14 +195,14 @@ int unpackMessage(uint8_t * message,uint8_t lenMes,uint8_t * payload)
 				#ifdef VESC_DEBUG
 
 				#endif
-				return -4;
+
 			}
 			else
 			{
 				#ifdef VESC_DEBUG
 
 				#endif
-				return -3;
+
 			}
 		break;
 
@@ -211,7 +211,7 @@ int unpackMessage(uint8_t * message,uint8_t lenMes,uint8_t * payload)
 			//lenPayload = 0; // To remove warning unused
 
 			#endif
-			return -5;
+
 
 		break;
 
@@ -219,7 +219,7 @@ int unpackMessage(uint8_t * message,uint8_t lenMes,uint8_t * payload)
 			#ifdef VESC_DEBUG
 
 			#endif
-			return -2;
+
 
 		break;
 	}
