@@ -21,13 +21,24 @@ typedef struct  {
 typedef struct  {
 		float Mot1_avgMotorCurrent;
 		float Mot2_avgMotorCurrent;
-		float Dul_avgInputCurrent;
+		float Dual_avgInputCurrent;
 		long Mot1_rpm;
 		float Dual_inpVoltage;
 		float Dual_ampHours;
 		float Dual_ampHoursCharged;
 		long Mot1_tachometerAbs;
-	}Custom_dataPackage;
+	}Custom_dataPackage; // size 32
+
+typedef struct  {
+		float Mot1_max_avgMotorCurrent;
+		float Mot2_max_avgMotorCurrent;
+		float Dual_max_avgInputCurrent;
+		float Dual_min_avgInputCurrent; //negative
+		float Mot1_min_avgMotorCurrent; //negative
+		float Mot2_min_avgMotorCurrent; //negative
+		float Dual_max_analogCurrent;
+		float Dual_min_analogCurrent;
+	}Max_vals; // size 32
 
 
 /** Struct to store the telemetry data returned by the VESC */
@@ -41,7 +52,7 @@ typedef struct  {
 		float ampHoursCharged;
 		long tachometer;
 		long tachometerAbs;
-	}dataPackage;
+	}dataPackage; // size 36
 
 	/** Struct to hold the nunchuck values to send over UART */
 		typedef struct  {
@@ -56,6 +67,7 @@ typedef struct  {
 extern	dataPackage data_vesc1;
 extern	dataPackage data_vesc2;
 extern	Custom_dataPackage Telemetry_data;
+extern Max_vals vesc_dual_extrem;
 extern	nunchuckPackage nunchuck;
 extern	volatile vesc_rev_msg vesc_uart2_container; // used in ISR
 
