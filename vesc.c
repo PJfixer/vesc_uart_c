@@ -7,6 +7,7 @@
 dataPackage data_vesc1;
 dataPackage data_vesc2;
 Custom_dataPackage Telemetry_data;
+Max_vals vesc_dual_extrem;
 nunchuckPackage nunchuck; 
 volatile vesc_rev_msg vesc_uart2_container; // used in ISR
 
