@@ -38,6 +38,8 @@ typedef struct  {
 		float Mot2_min_avgMotorCurrent; //negative
 		float Dual_max_analogCurrent;
 		float Dual_min_analogCurrent;
+		float Dual_avg_max_analogCurrent;
+		float Dual_avg_min_analogCurrent;
 	}Max_vals; // size 32
 
 
